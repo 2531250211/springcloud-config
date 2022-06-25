@@ -1,0 +1,25 @@
+server:
+  port: 9001
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: www
+  client:
+    fetch-registry: false
+    # 去掉register-with-eureka选项，让Eureka服务器自己注册到其他Eureka服务器，这样才能相互启用
+    service-url:
+      # 注意这里填写其他Eureka服务器的地址，不用写自己的
+      defaultZone: http://localhost:9001/eureka
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_order?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  application:
+    name: eureka01
+
+
+
+
+
